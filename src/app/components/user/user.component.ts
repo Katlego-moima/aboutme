@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -13,10 +14,11 @@ export class UserComponent implements OnInit {
   email!: string;
   address!: Address;
   hobbies!: string[];
+  isEdit: boolean = false;
 
 
 
-  constructor() { }
+  constructor(private data: DataService) {}
 
   ngOnInit(): void {
 
@@ -59,6 +61,12 @@ export class UserComponent implements OnInit {
 
     }
     
+  }
+
+  onToggle() {
+
+    this.isEdit =! this.isEdit;
+
   }
 
 }
