@@ -16,32 +16,32 @@
      
      <form> 
          <div>
-             <label for="name">Name: </label>
+             <label for="name">Name: </label><br>
              <input type="text" [(ngModel)]="name" name="name">
             </div>
             
             <div>
-                <label for="age">Age: </label>
+                <label for="age">Age: </label><br>
                 <input type="text" [(ngModel)]="age" name="age">
             </div>
             
             <div>
-                <label for="email">Email: </label>
+                <label for="email">Email: </label><br>
                 <input type="text" [(ngModel)]="email" name="email">
             </div>
             
             <div>
-                <label for="street">Street: </label>
+                <label for="street">Street: </label><br>
                 <input type="text" [(ngModel)]="address.street" name="street">
             </div>
             
             <div>
-                <label for="city">City: </label>
+                <label for="city">City: </label><br>
                 <input type="text" [(ngModel)]="address.city" name="city">
             </div>
             
             <div>
-                <label for="contry">Country: </label>
+                <label for="country">Country: </label><br>
                 <input type="text" [(ngModel)]="address.country" name="country">
             </div>
         </form>
@@ -62,4 +62,9 @@
     </li>
 </ul>
 
+<h1>Posts</h1>
+<div *ngFor="let post of posts">
+    <h4>{{post.title}}</h4>
+    <p>{{post.body}}</p>
+</div>
 

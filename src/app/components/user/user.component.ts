@@ -15,6 +15,7 @@ export class UserComponent implements OnInit {
   address!: Address;
   hobbies!: string[];
   isEdit: boolean = false;
+  posts!: Post[];
 
 
 
@@ -31,7 +32,12 @@ export class UserComponent implements OnInit {
       country: 'South Africa'
     }
 
-    this.hobbies = ['write code', 'watch Series', 'Bake', 'Spend time with family']
+    this.hobbies = ['write code', 'watch Series', 'Bake', 'Spend time with family'];
+
+    this.data.getPosts().subscribe((posts) => {
+      this.posts = posts;
+      
+    })
   }
 
   onClick() {
@@ -76,4 +82,13 @@ interface Address {
   street: string,
   city: string,
   country: string
+}
+
+interface Post {
+title: string;
+id: number;
+body: string;
+userid: number;
+
+
 }
